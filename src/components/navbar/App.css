@@ -1,6 +1,7 @@
-section {
-  height: 80px;
+.navbar {
+  height: 10vh;
   width: 100%;
+  border:2px solid white;
 }
 
 label.logo {
@@ -12,18 +13,18 @@ label.logo {
   margin-left:0;
 }
 
-section ul {
+.navbar ul {
   float: right;
   margin-right: 7vw;
 }
 
-section ul li {
+.navbar ul li {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
 }
 
-section ul li a {
+.navbar ul li a {
   color: white;
   font-size: 17px;
   padding: 0px 13px;
@@ -59,7 +60,7 @@ a:hover {
     padding-left: 50px;
   }
 
-  section ul li a {
+  .navbar ul li a {
     font-size: 16px;
   }
 }
@@ -80,13 +81,13 @@ a:hover {
     text-align: center;
   }
 
-  section ul li {
+  .navbar ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
   }
 
-  section ul li a {
+  .navbar ul li a {
     font-size: 20px;
   }
 
