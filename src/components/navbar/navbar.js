@@ -3,7 +3,7 @@ import './App.css';
 import ReactRouterDOM from 'react-router-dom';
 function Navbar(){
   return(
-    <section>
+    <section className='navbar'>
       <label className='logo'>Crypto Tracker</label>
       <ul>
             <li><a className="active" href="#">Home</a></li>
