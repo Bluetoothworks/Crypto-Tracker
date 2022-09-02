@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Navbar from "./components/navbar/navbar";
-import { fetchcoinsdata } from './api';
+import { fetchcoinsdata,historicalChart } from './api';
 
 function App() {
   const [coinData,setcoinData]=useState([]);
@@ -12,6 +12,8 @@ function App() {
       setcoinData(data);
     }
     fetchAPI();
+
+    historicalChart();
   },[]);
   return (
     <div id="home">

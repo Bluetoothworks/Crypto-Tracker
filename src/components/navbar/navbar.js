@@ -6,7 +6,7 @@ function Navbar(){
     <section>
       <label className='logo'>Crypto Tracker</label>
       <ul>
-            <li><a class="active" href="#">Home</a></li>
+            <li><a className="active" href="#">Home</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Services</a></li>
             <li><a href="">Contact</a></li>
