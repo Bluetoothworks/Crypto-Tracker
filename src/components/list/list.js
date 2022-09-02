@@ -1,5 +1,25 @@
 import React from 'react'
 import './list.css';
+import logo from './Bitcoin.svg.png';
+
+function Coininfo(){
+  return(
+    <div className='coin'>
+        <div className='coin-logo'><img src={logo} /></div>
+        <div className='coin-inf'>
+            <div className='coin-name coin-in'>
+              BTC<span> &nbsp;/ USD</span>
+            </div>
+            <div className='coin-condition coin-in' style={{color:"red"}}>
+            <i class="fa-sharp fa-solid fa-triangle"></i> <span style={{color:"red"}}>0.48%</span>
+            </div>
+        </div>
+        <div className='coin-price '>
+          19,918 USD
+        </div>
+      </div>
+  );
+}
 function Head() {
   return (
     <div className='list-head'>
@@ -10,10 +30,29 @@ function Head() {
 function Search() {
   return (
     <div className='search'>
-      <form className='search-container'>
-        <input type='text' id='search-bar' placeholder='What can I help you with today?' />
-          <a href='#'><img className='search-icon' src='http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png' /></a>
-      </form>
+      <input type='search' placeholder='Search for crypto currency'></input>
+      <a href='#'><i class="fas fa-search"></i></a>
+    </div>
+  );
+}
+function Coin(){
+  return(
+    <div className='coin-list'>
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
+      <Coininfo />
     </div>
   );
 }
@@ -22,6 +61,7 @@ export default function List() {
     <section className='sidebar'>
       <Head />
       <Search />
+      <Coin />
     </section>
   );
 }
