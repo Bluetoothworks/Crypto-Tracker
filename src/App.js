@@ -23,7 +23,7 @@ function App() {
   return (
     <div id="home">
       <Navbar />
-      <List />
+      <List coindata={coinData}/>
     </div>
   );
 }
