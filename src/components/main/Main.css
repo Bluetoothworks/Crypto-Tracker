@@ -8,6 +8,9 @@
   box-sizing: border-box;
   overflow-y: scroll;
 }
+#main::-webkit-scrollbar {
+  width: 0px;
+}
 .data {
   height: 70%;
   width: 95%;
