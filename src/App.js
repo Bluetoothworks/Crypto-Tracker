@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "./components/navbar/navbar";
-import List from "./components/list/list";
-import "./styles.css";
-import { fetchcoinsdata } from "./api";
-import Main from "./components/main/Main";
+import './styles.css';
+import { BrowserRouter as Router, Routes,Route} from "react-router-dom";
+import HomePage from "./pages/home/Homepage";
+import News from  "./pages/news/News";
 
-function App() {
-  const [coinData, setcoinData] = useState([]);
-  useEffect(() => {
-    const fetchAPI = async () => {
-      const data = await fetchcoinsdata();
-      // console.log(data);
-      setcoinData(data);
-    };
-    fetchAPI();
-  }, []);
+function NotFound() {
+  return <>You have landed on a page that doesn't exist</>;
+}
+export default function App(){
   return (
-    <div id="home">
-      <Navbar />
-      <List />
-      <Main />
-    </div>
-  );
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route exact path='/' element={<HomePage/>} />
+        <Route path='/news' element={<News/>} />
+        <Route path='/about' element={<NotFound/>} />
+        <Route path="/users" element={<NotFound/>} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;

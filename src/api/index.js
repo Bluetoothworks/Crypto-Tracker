@@ -4,7 +4,7 @@ export const fetchcoinsdata= async (currency="usd")=>{
     const url=`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
     try {
         const {data}= await axios.get(url);
-        console.log(data);
+        // console.log(data);
         const data_need=data.map((coin_info)=>({
             id:coin_info.id,
             symbol:coin_info.symbol,
@@ -27,6 +27,12 @@ export const singlecoin= async (id) => {
     
 }
 
-export const HistoricalChart= async(id,days=365,currency) =>{
+export const historicalChart= async (id="bitcoin",days=365,currency="usd") =>{
     const url=`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`;
+    try {
+        const {data}= await axios.get(url);
+        return data;
+    } catch (error) {
+        console.log("Error");
+    }
 }
