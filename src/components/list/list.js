@@ -1,17 +1,16 @@
 import React from 'react'
 import './list.css';
-import logo from './Bitcoin.svg.png';
 
-function Coininfo({data}){
+function Coininfo({data,idx}){
   return(
-    <div className='coin'>
+    <div key={idx} className='coin' >
         <div className='coin-logo'><img src={data.image} alt="coin image"/></div>
         <div className='coin-inf'>
             <div className='coin-name coin-in'>
               {data.symbol.toUpperCase()}<span> &nbsp;/ USD</span>
             </div>
             <div className='coin-condition coin-in' style={{color:"red"}}>
-            <i class="fa-sharp fa-solid fa-triangle"></i> <span style={{color:"red"}}>{data.change_24h}%</span>
+            <i className="fa-sharp fa-solid fa-triangle"></i> <span style={{color:"red"}}>{data.change_24h}%</span>
             </div>
         </div>
         <div className='coin-price '>
@@ -31,21 +30,21 @@ function Search() {
   return (
     <div className='search'>
       <input type='search' placeholder='Search for crypto currency'></input>
-      <a href='#'><i class="fas fa-search"></i></a>
+      <a href='#'><i className="fas fa-search"></i></a>
     </div>
   );
 }
 function Coin({coindata}){
   return(
     <div className='coin-list'>
-      {coindata.map((data)=>(<Coininfo data={data}/>))}
+      {coindata.map((data,idx)=>(<Coininfo data={data} key={idx} />))}
     </div>
   );
 }
 export default function List({coindata}){
-  console.log(coindata);
-  if(!coindata)
+  if(coindata.length==0)
     return;
+  console.log(coindata);
   return (
     <section className='sidebar'>
       <Head />
