@@ -117,7 +117,7 @@ const Navbar = props => {
       w="100vw"
       p={0}
       color={["white", "white", "white", "primary.700"]}
-      bg={["primary.500", "primary.500", "primary.500", "white"]}
+      bg={["primary", "primary.500", "primary.500", "white"]}
       boxShadow={useColorModeValue(
         "0px 0.25rem 0.75rem 0px rgb(190 194 255 / 18%)",
         "0px 0.25rem 0.75rem 0px rgb(0 14 81 / 35%)"
