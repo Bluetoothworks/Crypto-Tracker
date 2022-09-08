@@ -44,7 +44,7 @@ function Coin({coindata}){
 export default function List({coindata}){
   if(coindata.length==0)
     return;
-  console.log(coindata);
+  // console.log(coindata);
   return (
     <section className='sidebar'>
       <Head />
