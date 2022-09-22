@@ -7,6 +7,7 @@
   padding: 10px 10px;
   box-sizing: border-box;
   overflow-y: scroll;
+  background-color: black;
 }
 #main::-webkit-scrollbar {
   width: 0px;
