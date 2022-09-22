@@ -12,7 +12,6 @@ export default function HomePage() {
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await fetchcoinsdata();
-      // console.log(data);
       setcoinData(data);
     };
     fetchAPI();

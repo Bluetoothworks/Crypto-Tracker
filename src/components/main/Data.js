@@ -3,7 +3,7 @@ import { useState } from "react";
 import { fetchcoinsdatacomplete } from "../../api";
 
 const Data = ({ coinId, signal }) => {
-  const [data, setData] = useState();
+  const [image, setImage] = useState();
   const [marketCap, setMarketCap] = useState(0);
   const [totalSup, setTotalSup] = useState("");
   const [cirSup, setCirCup] = useState("");
@@ -16,14 +16,9 @@ const Data = ({ coinId, signal }) => {
   const [symbol, setSymbol] = useState();
   useEffect(() => {
     if (signal !== 0) {
-      console.log("coinid", coinId);
-      console.log("signal", signal);
       const fetchData = async () => {
         const d = await fetchcoinsdatacomplete();
         const d1 = d.filter((x) => x.id === coinId);
-        setData(d1);
-        console.log(d1);
-        console.log(d1[0].market_cap);
         setMarketCap(d1[0].market_cap);
         setTotalSup(d1[0].total_supply);
         setFulDilV(d1[0].fully_diluted_valuation);
@@ -34,6 +29,7 @@ const Data = ({ coinId, signal }) => {
         setName(d1[0].name);
         setMktChng(d1[0].market_cap_change_percentage_24h);
         setSymbol(d1[0].symbol.toUpperCase());
+        setImage(d1[0].image);
       };
       fetchData();
     }
@@ -43,9 +39,10 @@ const Data = ({ coinId, signal }) => {
     <div className="data" style={{ color: "white" }}>
       <div className="data1-rank">Rank {rank}</div>
       <div className="data1-head">
+        <img style={{ display: "inline-block", height: "3rem" }} src={image} />{" "}
         {name} {symbol}
       </div>
-      <div className="data1-price">Current Price {curPrice}</div>
+      <div className="data1-price">Current Price ${curPrice}</div>
       <div className="data1-con1">
         <div className="data1-con1-c">
           <div>Market Cap</div>
