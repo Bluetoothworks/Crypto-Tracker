@@ -23,7 +23,7 @@ const Main = ({ signal, coinId, coinData }) => {
     <div id="main">
       <Data coinId={coinId} signal={signal} />
       <Graph />
-      <Statistics />
+      <Statistics coinId={coinId} signal={signal} />
     </div>
   );
 };
