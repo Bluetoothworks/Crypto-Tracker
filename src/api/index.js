@@ -4,7 +4,7 @@ export const fetchcoinsdata = async (currency = "usd") => {
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
   try {
     const { data } = await axios.get(url);
-    console.log("api data", data);
+    // console.log("api data", data);
     const data_need = data.map((coin_info) => ({
       id: coin_info.id,
       symbol: coin_info.symbol,
