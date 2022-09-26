@@ -14,7 +14,8 @@ import { useStyleConfig } from '@chakra-ui/react';
 Chart.register(CategoryScale);
 
 
-const Graph= () => {
+const Graph= ({coinInfo}) => {
+    // console.log(JSON.stringify(coinInfo));
 const [historicData, setHistoricData] = useState();
 const [days, setDays] = useState(1);
 
@@ -35,14 +36,14 @@ const [days, setDays] = useState(1);
 useEffect(()=>{
     
     const fetchAPI= async ()=>{
-      const data=await historicalChart();
+      const data=await historicalChart(coinInfo.id,coinInfo.days,coinInfo.currency);
       setHistoricData(data.prices);
-      console.log(data.prices);
+    //   console.log(data.prices);
     }
     fetchAPI();
-  },[]);
+  },[coinInfo.id,setHistoricData]);
 
-  const styles = useStyleConfig('container')
+  const styles = useStyleConfig('container');
 
   return (
     historicData?(
