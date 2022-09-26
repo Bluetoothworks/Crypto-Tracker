@@ -17,8 +17,6 @@ const Statistics = ({ coinId, signal }) => {
   const [rank, setRank] = useState();
   useEffect(() => {
     if (signal !== 0) {
-      console.log("coinid", coinId);
-      console.log("signal", signal);
       const fetchData = async () => {
         const d = await fetchcoinsdatacomplete();
         const d1 = d.filter((x) => x.id === coinId);
