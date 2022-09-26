@@ -18,7 +18,6 @@ export default function List({ coindata, signal, setSignal, setCoinId ,coinInfo,
   const [search, setSearch] = useState("");
   
   if (coindata.length === 0) return;
-  // console.log(coindata);
 
   const handleSearch = () => {
     return coindata.filter(
@@ -27,7 +26,8 @@ export default function List({ coindata, signal, setSignal, setCoinId ,coinInfo,
         coin.symbol.toLowerCase().includes(search)
     );
   };
-
+const icon=data.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-sharp fa-solid fa-triangle"
+  let col=data.change_24h<0?"red":"green";
   return (
     <section className="sidebar">
       <div className="list-head">USD</div>;
@@ -54,9 +54,9 @@ export default function List({ coindata, signal, setSignal, setCoinId ,coinInfo,
                 {data.symbol.toUpperCase()}
                 <span> &nbsp;/ USD</span>
               </div>
-              <div className="coin-condition coin-in" style={{ color: "red" }}>
-                <i className="fa-sharp fa-solid fa-triangle"></i>{" "}
-                <span style={{ color: "red" }}>{data.change_24h}%</span>
+              <div className="coin-condition coin-in" style={{ color: col }}>
+                <i className={icon}></i>{" "}
+                <span style={{ color: col }}>{data.change_24h}%</span>
               </div>
             </div>
             <div className="coin-price ">{data.price} USD</div>
