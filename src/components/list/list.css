@@ -1,13 +1,13 @@
 .sidebar {
   width: 20vw;
   height: 90vh;
-  border: 1px solid yellow;
+  border-right: 1px solid white;
+  z-index: 40;
 }
 
 .list-head {
   width: 100%;
   height: 10%;
-  border: 2px solid red;
   font-size: 2em;
   color: white;
   display: flex;
@@ -18,7 +18,7 @@
 .search {
   width: 100%;
   height: 6%;
-  border: 1px solid red;
+  border-top: 1px solid white;
   padding: 0 0 0 5%;
   display: flex;
   align-items: center;
@@ -95,4 +95,13 @@
   justify-content: center;
   align-items: center;
   color: white;
+  width: 22%;
+  padding-right: 1%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    opacity: 0;
+    width: 0;
+  }
 }/*# sourceMappingURL=list.css.map */

@@ -2,6 +2,7 @@ import Graph from "../graph/Chart";
 import Data from "./Data";
 import "./Main.css";
 import Statistics from "./Statistics";
+import Hamburger from "./Hamburger";
 const Main = ({ signal, coinId }) => {
   return signal === 0 ? (
     <div id="main" style={{ fontSize: "2rem", color: "whitesmoke" }}>
@@ -13,6 +14,7 @@ const Main = ({ signal, coinId }) => {
       <Data coinId={coinId} signal={signal} />
       <Graph />
       <Statistics coinId={coinId} signal={signal} />
+      <Hamburger />
     </div>
   );
 };

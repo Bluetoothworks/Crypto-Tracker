@@ -7,7 +7,12 @@
   padding: 10px 10px;
   box-sizing: border-box;
   overflow-y: scroll;
-  background-color: black;
+  z-index: 1;
+}
+@media only screen and (max-width: 1000px){
+  #main{
+    width:90vw;
+  }
 }
 #main::-webkit-scrollbar {
   width: 0px;
@@ -43,6 +48,7 @@
   color: black;
   border-radius: 10px 10px 10px 10px;
   font-weight: bold;
+  padding: 4px 27px;
 }
 .data1-head {
   font-size: 2rem;

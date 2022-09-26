@@ -1,106 +1,128 @@
-.sidebar{
-    width: 20vw;
-    height:90vh;
-    border:1px solid yellow;
-}
-.list-head{
-    width:100%;
-    height:10%;
-    border: 2px solid red;
-    font-size: 2em;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sidebar {
+  width: 20vw;
+  height: 90vh;
+  border-right: 1px solid white;
+  z-index: 40;
 }
 
-.search{
-  width:100%;
-  height:6%;
-  border: 1px solid red;
+.list-head {
+  width: 100%;
+  height: 10%;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  width: 100%;
+  height: 6%;
+  border-top: 1px solid white;
   padding: 0 0 0 5%;
   display: flex;
   align-items: center;
-  input{
+
+  input {
 
     // width: 85%;
     // height: 50%;
     // margin: 0;
     // padding: 5% 0;
-    width:85%;
+    width: 85%;
     padding: 0;
     margin: 0;
     border: 0;
     color: white;
-    
+
   }
-  input:focus{
-    border:0;
+
+  input:focus {
+    border: 0;
     box-shadow: 0;
   }
-  a{
-    i{
+
+  a {
+    i {
       font-size: 1.4em;
     }
   }
 }
-.coin-list{
-  height:84%;
-  width:100%;
-  border:3px solid white;
+
+.coin-list {
+  height: 84%;
+  width: 100%;
+  border: 3px solid white;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   scrollbar-width: thin;
 }
-.coin{
+
+.coin {
   width: 100%;
-  height:9%;
+  height: 9%;
   border-bottom: 1px solid white;
   display: flex;
   align-items: center;
-  .coin-logo{
+
+  .coin-logo {
     height: 100%;
     width: 17%;
     display: flex;
     align-items: center;
     justify-content: center;
-    img{
-      width:80%;
-      height: 80%;      
+
+    img {
+      width: 80%;
+      height: 80%;
     }
   }
-  .coin-inf{
+
+  .coin-inf {
     height: 100%;
     width: 60%;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 1.2em;
-    .coin-in{
+
+    .coin-in {
       width: 100%;
       height: 50%;
-      color:white;
+      color: white;
       padding-left: 10px;
-      span{
+
+      span {
         font-size: 0.7em;
         color: rgb(175, 175, 175);
       }
-      .coin-condition{
+
+      .coin-condition {
         color: red !important;
-        .i{
+
+        .i {
           color: yellow;
-          background-color:green;
+          background-color: green;
         }
       }
-      
+
     }
 
   }
-  .coin-price{
-    display:flex;
+
+  .coin-price {
+    display: flex;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
+    width: 22%;
+    padding-right: 1%;
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    opacity: 0;
+    width: 0;
+  }
+}

@@ -12,6 +12,8 @@ function handleClick(signal, setSignal, key, setCoinId) {
   setCoinId(key);
 }
 function Coininfo({ data, idx, signal, setSignal, setCoinId }) {
+  const icon=data.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-sharp fa-solid fa-triangle"
+  let col=data.change_24h<0?"red":"green";
   return (
     <div
       key={idx}
@@ -26,9 +28,9 @@ function Coininfo({ data, idx, signal, setSignal, setCoinId }) {
           {data.symbol.toUpperCase()}
           <span> &nbsp;/ USD</span>
         </div>
-        <div className="coin-condition coin-in" style={{ color: "red" }}>
-          <i className="fa-sharp fa-solid fa-triangle"></i>{" "}
-          <span style={{ color: "red" }}>{data.change_24h}%</span>
+        <div className="coin-condition coin-in" >
+          <i className={icon} style={{ color: col }}></i>{" "}
+          <span style={{ color: col }}>{data.change_24h}%</span>
         </div>
       </div>
       <div className="coin-price ">{data.price} USD</div>
