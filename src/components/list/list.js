@@ -26,8 +26,9 @@ export default function List({ coindata, signal, setSignal, setCoinId ,coinInfo,
         coin.symbol.toLowerCase().includes(search)
     );
   };
-const icon=data.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-sharp fa-solid fa-triangle"
-  let col=data.change_24h<0?"red":"green";
+const icon=coindata.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-sharp fa-solid fa-triangle"
+  let col=coindata.change_24h<0?"red":"green";
+  console.log(coindata.change_24h);
   return (
     <section className="sidebar">
       <div className="list-head">USD</div>;
@@ -54,9 +55,9 @@ const icon=data.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-s
                 {data.symbol.toUpperCase()}
                 <span> &nbsp;/ USD</span>
               </div>
-              <div className="coin-condition coin-in" style={{ color: col }}>
-                <i className={icon}></i>{" "}
-                <span style={{ color: col }}>{data.change_24h}%</span>
+              <div className="coin-condition coin-in" style={{ color: data.change_24h<0?"red":"green" }}>
+                <i className={data.change_24h<0?"fa-sharp fa-solid fa-triangle fa-rotate-180":"fa-sharp fa-solid fa-triangle"}></i>{" "}
+                <span style={{ color: data.change_24h<0?"red":"green" }}>{data.change_24h}%</span>
               </div>
             </div>
             <div className="coin-price ">{data.price} USD</div>

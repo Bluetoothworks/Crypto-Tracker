@@ -23,9 +23,9 @@ function Logo(props) {
           color={["white", "white", "white", "primary.500"]}
           p="0"
         >
-          Chakra-UI
-          <Text as="span" display="block" fontSize="0.85rem" fontWeight="400">
-            Playground
+          Crypto Hunter
+          <Text as="span" display="block" fontSize="0.85rem" fontWeight="400" >
+            by Crypto Bros
           </Text>
         </Heading>
       </Link>

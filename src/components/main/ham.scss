@@ -6,8 +6,13 @@
     top:0%;
     left:90%;
     font-size: 60px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+@media only screen and (max-width: 1080px) {
+    #ham{
+        display:flex;
+    }
 }
